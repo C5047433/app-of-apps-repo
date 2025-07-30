@@ -3,16 +3,12 @@ kind: Application
 metadata: 
   name: app-of-apps
   namespace: argocd
-  annotations:
-    argocd.argoproj.io/manifest-generate-paths: apps
 spec:
   project: default
   source:
     repoURL: https://github.com/C5047433/app-of-apps-repo.git
     targetRevision: HEAD
     path: applications
-    directory: 
-      recursive: true
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
