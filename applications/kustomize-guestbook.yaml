@@ -12,11 +12,12 @@ spec:
     repoURL: https://github.com/argoproj/argocd-example-apps.git
     targetRevision: HEAD
     path: kustomize-guestbook
+    kustomize: {}
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-  syncOptions:
-    - createNameSpace=true
+    syncOptions:
+      - CreateNamespace=true
 
   
